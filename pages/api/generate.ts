@@ -24,8 +24,6 @@ export default async function handler(
     stop: [":"],
   });
 
-  console.log("response", response.data);
-
   res.status(200).json({ result: response.data.choices[0].text });
 }
 
