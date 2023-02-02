@@ -34,6 +34,10 @@ export default function Home() {
           Plain English to regular expression
         </p>
       </div>
+      <div className="mt-12">
+        <h2 className="pb-3 text-xl">I want a regex for</h2>
+        <Form generateCron={generateCron} result={result} loading={loading} />
+      </div>
       <footer>
         By Vikas G
       </footer>
