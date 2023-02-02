@@ -23,6 +23,7 @@ export default async function handler(
     presence_penalty: 0.0,
     stop: [":"],
   });
+  console.log('response', response)
 
   res.status(200).json({ result: response.data.choices[0].text });
 }
