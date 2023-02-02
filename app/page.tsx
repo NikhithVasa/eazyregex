@@ -28,7 +28,7 @@ export default function Home() {
       <div className="mt-8 border-b border-neutral-800 pb-3 text-center">
         <h1 className="text-3xl">Eazy Regex</h1>
         <p className="tracking-wider text-neutral-400">
-          Words to regular expression
+          English words to regular expression
         </p>
       </div>
       <div className="mt-12">

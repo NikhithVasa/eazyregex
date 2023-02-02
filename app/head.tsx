@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Eazy Regex - Words to regular expression</title>
+      <title>Eazy Regex - English words to regular expression</title>
       <meta name="description" content="An easy AI regular expression generator" />
       <meta
         name="keywords"
