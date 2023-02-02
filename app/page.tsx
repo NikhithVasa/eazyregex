@@ -36,7 +36,7 @@ export default function Home() {
         <Form generateCron={generateCron} result={result} loading={loading} />
       </div>
       <footer>
-        ♥ OpenAI by Nikhith Vasa
+        By Nikhith Vasa
       </footer>
     </main>
   );
