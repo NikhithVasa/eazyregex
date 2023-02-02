@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <main className="m-auto max-w-xl p-4 text-white">
+    <main className="m-auto max-w-1xl p-4 text-white">
       <div className="mt-8 border-b border-neutral-800 pb-3 text-center">
         <h1 className="text-3xl">Eazy Regex</h1>
         <p className="tracking-wider text-neutral-400">
