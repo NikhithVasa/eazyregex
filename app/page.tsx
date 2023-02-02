@@ -36,7 +36,7 @@ export default function Home() {
         <Form generateCron={generateCron} result={result} loading={loading} />
       </div>
       <footer>
-        By Nikhith Vasa
+        By 
       </footer>
     </main>
   );
