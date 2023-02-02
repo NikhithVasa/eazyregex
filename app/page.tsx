@@ -28,12 +28,11 @@ export default function Home() {
       <div className="mt-8 border-b border-neutral-800 pb-3 text-center">
         <h1 className="text-3xl">Eazy Regex</h1>
         <p className="tracking-wider text-neutral-400">
-          Plain english to regular expression
+          Experience the power of AI
         </p>
-      </div>
-      <div className="mt-12">
-        <h2 className="pb-3 text-xl">I want a regex for</h2>
-        <Form generateCron={generateCron} result={result} loading={loading} />
+        <p className="tracking-wider text-neutral-400">
+          Plain English to regular expression
+        </p>
       </div>
       <footer>
         By Vikas G
