@@ -35,6 +35,9 @@ export default function Home() {
         <h2 className="pb-3 text-xl">I want a regex for</h2>
         <Form generateCron={generateCron} result={result} loading={loading} />
       </div>
+      <footer>
+        ♥ OpenAI by Nikhith Vasa
+      </footer>
     </main>
   );
 }
