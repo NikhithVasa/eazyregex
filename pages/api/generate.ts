@@ -28,10 +28,11 @@ export default async function handler(
 }
 
 function generatePrompt(data: Body) {
-  const prompt = `
-  Generate a regular expression using the following requirements.
-  Requirements: A regular expression for ${data.prompt}
-  Result:
-  `;
+//   const prompt = `
+//   Generate a regular expression using the following requirements.
+//   Requirements: A regular expression for ${data.prompt}
+//   Result:
+//   `;
+  const prompt = ${data.prompt}
   return prompt;
 }
