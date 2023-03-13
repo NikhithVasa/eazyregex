@@ -33,6 +33,8 @@ function generatePrompt(data: Body) {
 //   Requirements: A regular expression for ${data.prompt}
 //   Result:
 //   `;
-  const prompt = ${data.prompt}
+  const prompt = `${data.prompt}
+  Result:
+  `;
   return prompt;
 }
