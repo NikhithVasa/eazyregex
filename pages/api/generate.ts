@@ -25,7 +25,7 @@ export default async function handler(
       stop: [":"],
     });
     console.log('response', response)
-    res.status(200).json({ result: response.choices[0].message });
+    res.status(200).json({ result: response.choices[0].message.content });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'An error occurred', error });
