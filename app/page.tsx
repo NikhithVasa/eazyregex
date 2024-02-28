@@ -7,12 +7,18 @@ export default function Home() {
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Initialize currentNumber without changes
   const [currentNumber, setCurrentNumber] = useState(8374);
-  const [endNumber, setEndNumber] = useState(8379);
 
+  // Initialize endNumber from local storage or use default if not available
+  const [endNumber, setEndNumber] = useState(() => {
+    const storedEndNumber = localStorage.getItem("endNumber");
+    return storedEndNumber ? parseInt(storedEndNumber, 10) : 8379;
+  });
+
+  // Function to generate Cron remains the same
   const generateCron = async (prompt: string) => {
     setLoading(true);
-
     try {
       const response = await fetch("/api/generate", {
         method: "POST",
@@ -29,10 +35,10 @@ export default function Home() {
     } catch (error) {
       console.error("Failed to fetch:", error);
     }
-
     setLoading(false);
   };
 
+  // Effect to increment currentNumber
   useEffect(() => {
     if (currentNumber < endNumber) {
       const timerId = setInterval(() => {
@@ -41,6 +47,11 @@ export default function Home() {
       return () => clearInterval(timerId);
     }
   }, [currentNumber, endNumber]);
+
+  // Effect to save endNumber to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("endNumber", endNumber.toString());
+  }, [endNumber]);
 
   return (
     <main className="m-auto max-w-1xl p-4 text-white">
