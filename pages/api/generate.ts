@@ -13,28 +13,33 @@ export default async function handler(
 
   const prompt = generatePrompt(data);
 
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt,
-    temperature: 0,
-    max_tokens: 150,
-    top_p: 1.0,
-    presence_penalty: 0.0,
-    frequency_penalty: 0.0,
-    stop: [":"],
-  });
-
-  res.status(200).json({ result: response.data.choices[0].text });
+  try {
+    const response = await openai.chat.completions.create({
+      model:"gpt-3.5-turbo-0125",
+      messages: [{ role: "user", content:prompt}],
+      temperature: 0,
+      max_tokens: 150,
+      top_p: 1.0,
+      presence_penalty: 0.0,
+      frequency_penalty: 0.0,
+      stop: [":"],
+    });
+    res.status(200).json({ result: response.data.choices[0].text });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'An error occurred', error });
+  }
+  
 }
 
 function generatePrompt(data: Body) {
-//   const prompt = `
-//   Generate a regular expression using the following requirements.
-//   Requirements: A regular expression for ${data.prompt}
-//   Result:
-//   `;
-  const prompt = `${data.prompt}
+  const prompt = `
+  Generate a regular expression using the following requirements.
+  Requirements: A regular expression for ${data.prompt}
   Result:
   `;
+  // const prompt = `${data.prompt}
+  // Result:
+  // `;
   return prompt;
 }
