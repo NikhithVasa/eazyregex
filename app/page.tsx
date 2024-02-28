@@ -67,7 +67,6 @@ export default function Home() {
       <div>
         <div>
           <div>
-            <div style={{ fontSize: '1.5em', fontWeight: 'bold' }}>The present representatives currently holding office in Telangana.</div>
             <div
               style={{
                 fontSize: '25px',
