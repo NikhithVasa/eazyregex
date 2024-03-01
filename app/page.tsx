@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Form from "./form";
+import localstorage from "localstorage";
 
 export default function Home() {
   const [result, setResult] = useState("");
