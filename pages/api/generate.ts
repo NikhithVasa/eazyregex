@@ -15,7 +15,7 @@ export default async function handler(
 
   try {
     const response = await openai.chat.completions.create({
-      model:"gpt-3.5-turbo-0125",
+      model:"gpt-4o-mini",
       messages: [{ role: "user", content:prompt}],
       temperature: 0,
       max_tokens: 150,
@@ -37,9 +37,7 @@ function generatePrompt(data: Body) {
   const prompt = `
   Generate a regular expression using the following requirements.
   Requirements: A regular expression for ${data.prompt}
-  Result:
-  `;
-  const prompt = `${data.prompt}
+
   Result:
   `;
   return prompt;
